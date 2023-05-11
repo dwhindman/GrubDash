@@ -25,7 +25,7 @@ function read(req, res){
 }
 
 function update(req, res){
-    const { data: {id, name, description, price, image_url } = {} } = req.body;
+    const { data: { name, description, price, image_url } = {} } = req.body;
     res.locals.dish = {
         id: res.locals.dishId,
         name: name,
