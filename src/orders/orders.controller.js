@@ -8,7 +8,7 @@ const nextId = require("../utils/nextId");
 
 // TODO: Implement the /orders handlers needed to make the tests pass
 function create(req, res){
-    const { data: { id, deliverTo, mobileNumber, status, dishes } = {} } = req.body;
+    const { data: { deliverTo, mobileNumber, status, dishes } = {} } = req.body;
     const newOrder = {
         id: nextId(),
         deliverTo: deliverTo,
@@ -47,7 +47,7 @@ function destroy(req, res){
 }
 
 function validateOrder(req, res, next){
-    const { data: {id, deliverTo, mobileNumber, dishes } = {} } = req.body;
+    const { data: {deliverTo, mobileNumber, dishes } = {} } = req.body;
     let message;
     if(!deliverTo || deliverTo === ""){
         message = "Order must include a deliverTo";
