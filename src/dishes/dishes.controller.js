@@ -67,7 +67,7 @@ function validateDishBodyId(req, res, next){
 }
 
 function validateDishBody(req, res, next){
-    const { data: { id, name, description, price, image_url } = {} } = req.body;
+    const { data: { name, description, price, image_url } = {} } = req.body;
     let message;
     if(!name || name === ""){
         message = "Dish must iclude a name";
